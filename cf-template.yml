@@ -5,7 +5,7 @@ Parameters:
     Default: philipandresen
   GithubRepo:
     Type: String
-    Default: Maine-Wildlife
+    Default: maine-wildlife
   GithubOAuthToken:
     Type: String
     Description: Github personal access token
