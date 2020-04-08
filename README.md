@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The purpose of this website is neither purely artistic nor purely documentary. We hope to capture the wildlife in Maine
+as we see it, to inspire others and to provide a resource for learning about the critters and plants of our state.
+
 ## Available Scripts
 
 In the project directory, you can run:
