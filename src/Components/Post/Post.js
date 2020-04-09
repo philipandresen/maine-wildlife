@@ -1,8 +1,10 @@
 import React, {useState, useRef} from 'react';
 import './styles.scss';
 import InfoButton from "./InfoButton/InfoButton";
+import SpeechBubbleIcon from "../svg/SpeechBubbleIcon";
+import ChatButton from "./ChatButton/ChatButton";
 
-export default function ({children, image, title}) {
+export default function Post({children, image, title}) {
     const [showPostContent, setShowPostContent] = useState(false);
     const postTopRef = useRef(null);
     /**
@@ -25,7 +27,7 @@ export default function ({children, image, title}) {
         e.stopPropagation();
         if (!showPostContent) {
             window.scrollTo(0, postTopRef.current.offsetTop);
-            if (postTopRef.current.offsetTop === window.scrollY) {
+            if (Math.abs(postTopRef.current.offsetTop - window.scrollY) < 10) {
                 setShowPostContent((prev) => !prev);
             }
         } else {
@@ -34,7 +36,7 @@ export default function ({children, image, title}) {
     };
 
     return (
-        <>
+        <div>
             <div ref={postTopRef}/>
             <div className={'post-header'}>{title}</div>
             <div className={'post-container'} style={{backgroundImage: `url(${image})`}}
@@ -45,9 +47,10 @@ export default function ({children, image, title}) {
                     </div>
                     <div className={'post-footer'}>
                         <InfoButton {...{togglePostContent}}/>
+                        <ChatButton/>
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
