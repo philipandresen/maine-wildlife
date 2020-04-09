@@ -9,14 +9,15 @@ export default function () {
                 <div className={'header'}>
                     <div className={'text-overlay'}>
                         <div className={'text-overlay-menu'}>
-                            <div className={'text-overlay-menu-item'}>Menu One</div>
-                            <div className={'text-overlay-menu-item'}>Menu Two</div>
-                            <div className={'text-overlay-menu-item'}>Menu Three</div>
+                            <div className={'text-overlay-menu-item'}>Blog</div>
+                            <div className={'text-overlay-menu-item'}>Encyclopedia</div>
+                            <div className={'text-overlay-menu-item'}>About</div>
                         </div>
                         <div className={'text-overlay-title'}>Maine Wildlife</div>
                     </div>
                     <div><img src={Background}/></div>
                 </div>
+                <div className={'scroll-down'}/>
                 <div className={'article-container-container'}>
                     <div className={'article-container'}>
                         <article>
@@ -43,7 +44,7 @@ export default function () {
                 </div>
             </section>
             <footer>
-                Footer!
+                MaineWildlife is a react single page application work-in-progress by Philip A.
             </footer>
         </>
     )
