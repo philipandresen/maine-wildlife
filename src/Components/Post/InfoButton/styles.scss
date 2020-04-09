@@ -1,0 +1,12 @@
+div.info-wrapper {
+  padding: 0.5vmin;
+  fill: #CCC;
+  &:hover {
+    cursor: pointer;
+    fill: lightblue;
+  }
+  &:active {
+    transform: translate(1px, 1px);
+    fill: white;
+  }
+}
