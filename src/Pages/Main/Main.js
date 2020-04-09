@@ -5,8 +5,6 @@ import Background from '../../images/Chickadee_1.JPG';
 export default function () {
     return (
         <>
-            {/*The following meta tag is for facebook's open graph markup for link preview generation*/}
-            <meta property="og:image" content={Background} />
             <section>
                 <article className={'header'}>
                     <div className={'text-overlay'}>
