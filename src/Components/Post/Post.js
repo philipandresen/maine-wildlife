@@ -1,7 +1,6 @@
 import React, {useState, useRef} from 'react';
 import './styles.scss';
 import InfoButton from "./InfoButton/InfoButton";
-import SpeechBubbleIcon from "../svg/SpeechBubbleIcon";
 import ChatButton from "./ChatButton/ChatButton";
 
 export default function Post({children, image, title}) {
@@ -36,7 +35,7 @@ export default function Post({children, image, title}) {
     };
 
     return (
-        <div>
+        <div className={'post-container-outer'}>
             <div ref={postTopRef}/>
             <div className={'post-header'}>{title}</div>
             <div className={'post-container'} style={{backgroundImage: `url(${image})`}}

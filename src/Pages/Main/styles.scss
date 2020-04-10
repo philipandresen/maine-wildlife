@@ -5,9 +5,10 @@
 
 section {
   display: grid;
-  grid-template-columns: auto minmax(0px, 2000px) auto;
+  grid-template-columns: auto minmax(0px, 1600px) auto;
   background-color: #222;
-  div {
+  scroll-snap-type: y mandatory;
+  &>div {
     grid-column: 2;
   }
 }

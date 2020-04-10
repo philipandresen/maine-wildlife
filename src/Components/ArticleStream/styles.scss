@@ -1,0 +1,10 @@
+div.article-stream {
+  display: grid;
+  grid-template-rows: auto;
+  grid-row-gap: 2rem;
+  margin: 2rem 0;
+
+  > div {
+    grid-column: 1;
+  }
+}
