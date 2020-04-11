@@ -1,9 +1,18 @@
 import React from 'react';
-import MainRoute from './Routes/Main'
+import SitePage from './Pages/Site/Site'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 
 function App() {
     return (
-        <MainRoute/>
+        <Router>
+            <Switch>
+                <Route path={'/'} component={SitePage}/>
+            </Switch>
+        </Router>
         );
 }
 

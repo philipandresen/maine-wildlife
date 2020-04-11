@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+// Basic page layout will be full screen width up to 1600px. Empty columns fill left and right sections.
+div#root {
+  display: grid;
+  grid-template-columns: auto minmax(0px, 1600px) auto;
+  background-color: #222;
+  scroll-snap-type: y mandatory;
+  &>section {
+    grid-column: 2;
+    &.universal-footer {
+      text-align: center;
+      border-top: 1px solid #AAA;
+      color: #AAA;
+      margin: 20px;
+      padding: 20px;
+    }
+  }
+}

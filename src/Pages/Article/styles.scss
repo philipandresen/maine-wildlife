@@ -1,0 +1,29 @@
+section {
+  &.article-page-header {
+    margin: 3rem 0;
+    padding: 0 3rem;
+    font-weight: bolder;
+    flex-flow: row wrap;
+    display: flex;
+    justify-content: space-evenly;
+    color: whitesmoke;
+    font-size: 3rem;
+    overflow: hidden;
+    &>div {
+      margin: 0 3rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  &.article-nav-container {
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  &.article-page-text {
+    padding: 0 2rem;
+    font-size: 1rem;
+    color: #CCC;
+  }
+}

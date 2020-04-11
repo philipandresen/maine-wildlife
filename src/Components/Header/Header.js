@@ -7,7 +7,7 @@ export default function () {
     // The header is a 90vh component with moving / scaling text and images with a fixed image background?
 
     return (
-            <div className={'main-header-container'} style={{backgroundImage: `url(${Background})`}}>
+            <section className={'main-header-container'} style={{backgroundImage: `url(${Background})`}}>
                 <div className={'overlay'}>
                     {/*Transparent overlay here*/}
                     <div className={'title-content'}>
@@ -15,6 +15,6 @@ export default function () {
                     </div>
                 </div>
                 <div className={'scroll-down'}/>
-            </div>
+            </section>
     )
 }

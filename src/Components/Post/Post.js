@@ -2,6 +2,7 @@ import React, {useState, useRef} from 'react';
 import './styles.scss';
 import InfoButton from "./InfoButton/InfoButton";
 import ChatButton from "./ChatButton/ChatButton";
+import smoothScroll from "../../util/smoothScroll";
 
 export default function Post({children, image, title}) {
     const [showPostContent, setShowPostContent] = useState(false);
@@ -13,7 +14,8 @@ export default function Post({children, image, title}) {
     const togglePostContent = (e) => {
         e.stopPropagation();
         if (!showPostContent) {
-            window.scrollTo(0, postTopRef.current.offsetTop);
+            smoothScroll(0, postTopRef.current.offsetTop, 0.35);
+            //window.scrollTo(0, postTopRef.current.offsetTop);
         }
         setShowPostContent((prev) => !prev);
     };
@@ -25,7 +27,8 @@ export default function Post({children, image, title}) {
     const handlePostBodyClick = (e) => {
         e.stopPropagation();
         if (!showPostContent) {
-            window.scrollTo(0, postTopRef.current.offsetTop);
+            smoothScroll(0, postTopRef.current.offsetTop, 0.35);
+            //window.scrollTo(0, postTopRef.current.offsetTop);
             if (Math.abs(postTopRef.current.offsetTop - window.scrollY) < 10) {
                 setShowPostContent((prev) => !prev);
             }
