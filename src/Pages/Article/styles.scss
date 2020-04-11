@@ -3,9 +3,10 @@ section {
     margin: 3rem 0;
     padding: 0 3rem;
     font-weight: bolder;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     color: whitesmoke;
     font-size: 3rem;
     overflow: hidden;
@@ -19,6 +20,7 @@ section {
     padding: 20px;
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
     width: 100%;
   }
   &.article-page-text {

@@ -31,24 +31,29 @@ export default function Article() {
                 Registration by mail.
             </section>
             <section className={'article-nav-container'}>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
-                <div style={{width: '8rem', height: '8rem', border: '1px dashed white', margin: '2rem'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+                <div style={{width: '7rem', height: '7rem', border: '1px dashed white', margin: '2vmin'}}/>
+
+
+
             </section>
             <section>
                 <Post image={image1} title={'Black-Capped Chickadee'}/>
