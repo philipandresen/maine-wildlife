@@ -11,7 +11,7 @@ export default function Article() {
     return (
         <>
             <section className={'article-page-header'}>
-                <div>The Article {articleId} </div>
+                <div>A Brief Outdoor Adventure {`{${articleId}}`} </div>
                 <div>January 04, 2020</div>
             </section>
             <section className={'article-page-text'}>The majority of these companies use the copyright symbol in the
