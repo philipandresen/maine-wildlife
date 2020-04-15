@@ -52,7 +52,7 @@ Resources:
               CanonicalUser:
                 Fn::GetAtt: [ CloudFrontOriginAccessIdentity , S3CanonicalUserId ]
             Action: 's3:GetObject'
-            Resource: !Sub '${DeployBucket.Arn}/*'
+            Resource: !Sub '${UserContentBucket.Arn}/*'
   CodeBuildRole:
     Type: 'AWS::IAM::Role'
     Properties:
