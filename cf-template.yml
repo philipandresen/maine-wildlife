@@ -13,14 +13,46 @@ Parameters:
     Type: String
     Description: The ARN of the AWS ACM SSL Certificate that authorizes the use of the MaineWildlife domain.
 Resources:
+  UserContentBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      AccessControl: Private
   PipelineBucket:
     Type: 'AWS::S3::Bucket'
-    Properties: {}
+    Properties:
+      AccessControl: Private
   DeployBucket:
     Type: 'AWS::S3::Bucket'
     Properties:
+      AccessControl: Private
       WebsiteConfiguration:
         IndexDocument: index.html
+  DeployBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref DeployBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              CanonicalUser:
+                Fn::GetAtt: [ CloudFrontOriginAccessIdentity , S3CanonicalUserId ]
+            Action: 's3:GetObject'
+            Resource: !Sub '${DeployBucket.Arn}/*'
+  UserContentBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref UserContentBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              CanonicalUser:
+                Fn::GetAtt: [ CloudFrontOriginAccessIdentity , S3CanonicalUserId ]
+            Action: 's3:GetObject'
+            Resource: !Sub '${DeployBucket.Arn}/*'
   CodeBuildRole:
     Type: 'AWS::IAM::Role'
     Properties:
