@@ -1,77 +1,88 @@
-* {
-  background-color: whitesmoke;
-}
-  .resume-container {
-    grid-column: 2;
-    margin: 5%;
-    width: 90%;
+.resume-container {
+  color: whitesmoke;
+  grid-column: 2;
+  margin: 5%;
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  .footer {
+    text-align: center;
+  }
+
+  & > div.header {
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    .footer {
-      text-align: center;
-    }
-    &>div.header {
-      display: flex;
-      flex-flow: row wrap;
-      border-bottom: 1px solid maroon;
-      .header-left {
-        flex: 1 1 60%;
-        padding-left: 0;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-start;
-        .name {
-          font-size: 2em;
-          font-weight: bold;
-        }
-        .title {
+    flex-flow: row wrap;
+    border-bottom: 1px solid #c1201b;
 
-        }
-      }
-      .header-right {
-        flex: 1 1 40%;
-        padding: 1%;
-        display: flex;
-        flex-flow: column nowrap;
-        line-height: 2em;
-      }
-
-    }
-    .content {
+    .header-left {
+      flex: 1 1 60%;
+      padding-left: 0;
       display: flex;
       flex-flow: column nowrap;
-      padding: 3%;
-      section {
-        display: flex;
-        flex-flow: row wrap;
-        margin: 2% 0;
-        &>.section-title {
-          flex: 1 1 25%;
-          color: maroon;
-          font-size: 1.4em;
-          font-weight: bold;
-        }
-        &>.section-content {
-          flex: 1 1 75%;
-          .tech-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 150px));
-            div {
-              font-weight: lighter;
-              margin: 1%;
-            }
-          }
-          .content-header {
-            font-weight: bold;
-            font-size: 1.4em;
-          }
-          .content-subheader {
-            font-size: 0.9em;
+      align-items: flex-start;
+
+      .name {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .title {
+
+      }
+    }
+
+    .header-right {
+      flex: 1 1 40%;
+      padding: 1%;
+      display: flex;
+      flex-flow: column nowrap;
+      line-height: 2em;
+    }
+
+  }
+
+  .content {
+    display: grid;
+    flex-flow: column nowrap;
+    padding: 3%;
+    section {
+      display: flex;
+      flex-flow: row wrap;
+      margin: 2% 0;
+
+      & > .section-title {
+        flex: 1 1 25%;
+        color: #c1201b;
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+
+      & > .section-content {
+        flex: 1 1 75%;
+
+        .tech-flow {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(60px, 150px));
+
+          div {
             font-weight: lighter;
-            font-style: italic;
+            margin: 1%;
           }
+        }
+
+        .content-header {
+          font-weight: bold;
+          font-size: 1.4em;
+        }
+
+        .content-subheader {
+          font-size: 0.9em;
+          font-weight: lighter;
+          font-style: italic;
         }
       }
     }
   }
+}

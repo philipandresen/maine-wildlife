@@ -6,15 +6,15 @@ export default function Resume() {
         <div className={'resume-container'}>
             <div className={'header'}>
                 <div className={'header-left'}>
-                    <div className={'name'}>SOMEONE YOU MAY KNOW</div>
+                    <div className={'name'}>Philip Andresen</div>
                     <div className={'title'}>Application Developer</div>
                 </div>
                 <div className={'header-right'}>
                     <div>
-                        Email: somebody.you.may.know@gmail.com
+                        Email: info@maineWildlife.org
                     </div>
                     <div>
-                        Phone: (000) 000 - 0000
+                        Phone: N / A
                     </div>
                 </div>
             </div>
