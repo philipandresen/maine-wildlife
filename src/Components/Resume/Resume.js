@@ -23,13 +23,13 @@ export default function Resume() {
                     <div className={'section-title'}>Experience</div>
                     <div className={'section-content'}>
                         <div className={'content-header'}>IDEXX Laboratories</div>
-                        <div className={'content-subheader'}>September 2017 - March 2020, Developer (REACT/Node, Kanban/Scrum)</div>
+                        <div className={'content-subheader'}>September 2017 - March 2020, Developer ( Kanban / Scrum )</div>
                         <ul>
                             <li>Full Stack developer on React / Node Communicaton Software</li>
-                            <li>Designed and prototyped realtime API with Websockets</li>
-                            <li>Regularly conducted code reviews on production bound code</li>
+                            <li>Participated in and lead architectural discussions</li>
+                            <li>Conducted front end refactors and established design patterns</li>
                         </ul>
-                        <div className={'content-subheader'}>March 2016 - March 2018, Developer (Java, SCRUM)</div>
+                        <div className={'content-subheader'}>March 2016 - March 2018, Developer ( Scrum )</div>
                         <ul>
                             <li>Supported and patched legacy Java / Spring application as needed</li>
                             <li>Developed features for Java production support app</li>
@@ -42,7 +42,7 @@ export default function Resume() {
                         </ul>
                         <br/>
                         <div className={'content-header'}>Hess Biophysics Research Group</div>
-                        <div className={'content-subheader'}>2010 - 2013, Student Laboratory Aid (MatLab, Waterfall)</div>
+                        <div className={'content-subheader'}>2010 - 2013, Student Laboratory Aid ( Waterfall )</div>
                         <ul>
                             <li>Wrote software supporting the analysis / collection of data from super-resolution visible light microscopy</li>
                             <li>Practiced Hazardous material handling and radiation safety measures during basic lab procedures</li>
