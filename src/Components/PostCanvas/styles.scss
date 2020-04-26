@@ -1,0 +1,13 @@
+.zoom-slider {
+  width: 250px;
+  margin-right: 50px;
+}
+.post-canvas {
+  &>svg {
+    position: absolute;
+    line {
+      stroke-width: 2;
+      transition: x1 1s, y1 1s;
+    }
+  }
+}

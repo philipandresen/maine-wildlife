@@ -1,6 +1,5 @@
 import React from 'react';
 import Background from '../../images/Chickadee_1_a.jpg';
-import image1 from '../../images/Chickadee_2.JPG';
 import './styles.scss';
 
 export default function () {

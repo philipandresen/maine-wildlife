@@ -6,6 +6,7 @@ import {
     Route
 } from "react-router-dom";
 import ArticlePage from '../Article/Article';
+import AdminPage from '../Admin/Admin'
 
 export default function Site() {
     return (
@@ -15,6 +16,7 @@ export default function Site() {
             </section>
             <Switch>
                 <Route path={'/article/:articleId'} component={ArticlePage}/>
+                <Route path={'/admin'} component={AdminPage}/>
                 <Route path={'/'} component={MainPage}/>
             </Switch>
             <section className={'universal-footer'}>

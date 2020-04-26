@@ -1,0 +1,25 @@
+section {
+  table {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: black;
+    border-spacing: 5px;
+    &.exif-overlay {
+      position: absolute;
+      margin-top: 65px;
+      background: rgba(255,255,255,0.3)
+    }
+    tr {
+      td:first-child {
+        text-align: end;
+        color: whitesmoke;
+      }
+      td:last-child {
+        text-align: start;
+      }
+    }
+  }
+  .image-preview {
+
+  }
+}
