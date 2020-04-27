@@ -6,6 +6,13 @@ export default function smoothScroll(x, y, s) {
     const totalSteps = s * granularity;
     let currentStep = 0;
     const interval = setInterval(() => {
+        /* If the user tries to scroll while we're smooth scrolling, stop trying to smooth scroll. Let the user win.
+        function scrollCancel(e) {
+            clearInterval(interval);
+            e.target.removeEventListener(e.type, scrollCancel);
+        };
+        window.addEventListener("scroll", scrollCancel);
+         */
         currentStep++;
         scrollFunction(totalSteps, currentStep, current.x, current.y, deltaX, deltaY);
         if (currentStep >= totalSteps) {

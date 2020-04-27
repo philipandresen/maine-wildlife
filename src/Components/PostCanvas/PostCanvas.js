@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './styles.scss';
+import Post from "../Post/Post";
 
-export default function PostCanvas({image}) {
+export default function PostCanvas({image, saveFunction}) {
     const [trackMouse, setTrackMouse] = useState(false);
     const [canvas, setCanvas] = useState();
     const [zoomFactor, setZoomFactor] = useState(1);
@@ -10,7 +11,8 @@ export default function PostCanvas({image}) {
     const [rawPixelZoomMargin, setRawPixelZoomMargin] = useState({x: 0, y: 0});
     const [originMouse, setOriginMouse] = useState({x: 0, y: 0});
     const [rawOriginMouse, setRawOriginMouse] = useState({x: 0, y: 0});
-    const [rawPointOfFocus, setRawPointOfFocus] = useState({x:0, y:0});
+    const [rawPointOfFocus, setRawPointOfFocus] = useState({x: 0, y: 0});
+    const [previewImageUrl, setPreviewImageUrl] = useState();
 
     const canvasWidth = 1600;
     const canvasHeight = image && (canvasWidth / (image.width / image.height));
@@ -52,8 +54,7 @@ export default function PostCanvas({image}) {
         const bounds = event.currentTarget.getBoundingClientRect();
         const mouseX = event.clientX - bounds.left;
         const mouseY = event.clientY - bounds.top;
-        const [imageX, imageY] = canvasToImage(mouseX, mouseY);
-        setOriginMouse({x: mouseX , y: mouseY});
+        setOriginMouse({x: mouseX, y: mouseY});
         setRawOriginMouse({x: rawPixelOffset.x, y: rawPixelOffset.y});
         setTrackMouse(true);
     }
@@ -65,8 +66,8 @@ export default function PostCanvas({image}) {
             const mouseX = event.clientX - bounds.left;
             const mouseY = event.clientY - bounds.top;
             setRawPixelOffset(prev => ({
-                x: rawOriginMouse.x + (mouseX - originMouse.x)/rawPixelScale,
-                y: rawOriginMouse.y + (mouseY - originMouse.y)/rawPixelScale
+                x: rawOriginMouse.x + (mouseX - originMouse.x) / rawPixelScale,
+                y: rawOriginMouse.y + (mouseY - originMouse.y) / rawPixelScale
             }));
         }
     }
@@ -83,14 +84,14 @@ export default function PostCanvas({image}) {
         setZoomFactor(1 + (image.width / canvasWidth - 1) * (event.currentTarget.value / 100));
     }
 
-    function imageToCanvas(x,y) {
+    function imageToCanvas(x, y) {
         return [
             (canvasWidth / image.width * zoomFactor) * (x - effectivePixelOffset.x) + canvasWidth / 2,
             (canvasHeight / image.height * zoomFactor) * (y - effectivePixelOffset.y) + canvasHeight / 2
         ]
     }
 
-    function canvasToImage(x,y) {
+    function canvasToImage(x, y) {
         return [
             effectivePixelOffset.x + (x - canvasWidth / 2) / (canvasWidth / image.width * zoomFactor),
             effectivePixelOffset.y + (y - canvasHeight / 2) / (canvasHeight / image.height * zoomFactor),
@@ -99,6 +100,20 @@ export default function PostCanvas({image}) {
 
     function setRawPof() {
         setRawPointOfFocus(rawPixelOffset);
+    }
+
+    function togglePreviewMode() {
+        setPreviewImageUrl(canvas && canvas.toDataURL('image/jpeg'));
+    }
+
+    function savePost() {
+        const output = {
+            localDataUrl: canvas && canvas.toDataURL('image/jpeg'),
+            focusLeftPercent: renderedFocalX / canvasWidth * 100,
+            focusTopPercent: renderedFocalY / canvasHeight * 100
+        };
+        saveFunction(output.localDataUrl, output.focusLeftPercent, output.focusTopPercent);
+        console.log(output);
     }
 
     const [renderZoomX, renderZoomY] = imageToCanvas(rawPixelOffset.x, rawPixelOffset.y);
@@ -110,6 +125,8 @@ export default function PostCanvas({image}) {
             <input type="range" min={0} max={100} className="zoom-slider" id="myRange"
                    value={sliderValueZoomFactorInverse} onChange={zoomImage}/>
             <input type={'button'} value={"Set Point of Focus"} onClick={setRawPof}/>
+            <input type={'button'} value={"Update Preview"} onClick={togglePreviewMode}/>
+            <input type={'button'} value={"Save"} onClick={savePost}/>
             <div className={'post-canvas'} onMouseDown={startClick} onMouseMove={duringClick} onMouseUp={endClick}>
                 <svg width={canvasWidth} height={canvasHeight} id={'crosshair'}>
                     <line x1={renderZoomX} y1={renderZoomY + 30} x2={renderZoomX} y2={renderZoomY + 60}
@@ -141,6 +158,7 @@ export default function PostCanvas({image}) {
                 </svg>
                 <canvas ref={setCanvas}/>
             </div>
+            {previewImageUrl && <Post image={previewImageUrl} focusLeftPercent={renderedFocalX/canvasWidth * 100} focusTopPercent={(renderedFocalY/canvasHeight) * 100}/>}
         </>
     )
 }
